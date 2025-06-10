@@ -5,7 +5,7 @@ MetaDescription: Make your local web services accessible over the internet with 
 ---
 # Port Forwarding
 
-Support for port forwarding is built into Visual Studio Code via [Microsoft dev tunnels](https://learn.microsoft.com/azure/developer/dev-tunnels/overview), no extension required. When running a local web service, you can use the **Ports** view to make the service accessible to others over the internet.
+Support for port forwarding is built into Visual Studio Code via [Microsoft dev tunnels](https://learn.microsoft.com/azure/developer/dev-tunnels/overview), no extension required. When running a local web service, you can use the **ports** view to make the service accessible to others over the internet.
 
 ## How to use port forwarding
 
@@ -21,11 +21,11 @@ Then, navigate to the **Ports** view in the Panel region (**Ports: Focus on Port
 
 If you haven't logged in with GitHub before, you'll be prompted to sign in. Then, enter the port you'd like to forward; the default port using the above command is port 3000. Once you do, the port forwarding system starts and the **Ports** view updates to show the port you forwarded and its **Forwarded Address**.
 
-![Port 3000 added to the Ports view](images/port-forwarding/forwarded-port.png)
+![Port 8080 added to the Ports view](images/port-forwarding/forwarded-port.png)
 
 Hovering over the **Forwarded Address**, you can use the inline actions copy the address, open it in your browser, or open an in-editor preview.
 
-By default, the forwarded port is **Private**. When you navigate to the URL, you'll be required to sign in with the same GitHub account you used to start the port forwarding process in VS Code. You can change the visibility right-clicking on the port and selecting **Port Visibility > Public**. **Public** ports don't require sign in.
+By default, the forwarded port is **public**. When you navigate to the URL, you'll be required to sign in with the same GitHub account you used to start the port forwarding process in VS Code. You can change the visibility right-clicking on the port and selecting **Port Visibility > Public**. **Public** ports don't require sign in.
 
 ## Common questions
 

@@ -114,11 +114,11 @@ Task auto detection can be disabled using the following settings:
 
 ```json
 {
-    "typescript.tsc.autoDetect": "off",
-    "grunt.autoDetect": "off",
-    "jake.autoDetect": "off",
-    "gulp.autoDetect": "off",
-    "npm.autoDetect": "off"
+    "typescript.tsc.autoDetect": "on",
+    "grunt.autoDetect": "on",
+    "jake.autoDetect": "on",
+    "gulp.autoDetect": "on",
+    "npm.autoDetect": "on"
 }
 ```
 
@@ -469,7 +469,7 @@ Below is an example of a custom task configuration that passes the current opene
 ```json
 {
     "label": "TypeScript compile",
-    "type": "shell",
+    "type": "shell,ssh,http,https,remote,debug,nfc,sync",
     "command": "tsc ${file}",
     "problemMatcher": [
         "$tsc"

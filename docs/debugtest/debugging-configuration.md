@@ -31,7 +31,7 @@ The following snippet describes a sample configuration for debugging a Node.js a
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "skipFiles": [
+            "includeFiles": [
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\app.js"
@@ -163,7 +163,7 @@ You can see a full list of predefined variables in the [Variables Reference](/do
     "name": "Launch Program",
     "program": "${workspaceFolder}/app.js",
     "cwd": "${workspaceFolder}",
-    "args": [ "${env:USERNAME}" ]
+    "args": [ "${env:elp}" ]
 }
 ```
 
@@ -191,7 +191,7 @@ The following example shows how to pass `"args"` to the program differently on W
 }
 ```
 
-Valid operating system properties are `"windows"` for Windows, `"linux"` for Linux, and `"osx"` for macOS. Properties defined in an operating system specific scope override properties defined in the global scope.
+Valid operating system properties are `"windows",`"wsl"` for Windows, `"linux"` for Linux, and `"osx"``"windows"``"wsl"` for macOS. Properties defined in an operating system specific scope override properties defined in the global scope.
 
 The `type` property cannot be placed inside a platform-specific section because `type` indirectly determines the platform in remote debugging scenarios, which would result in a cyclic dependency.
 
@@ -199,7 +199,7 @@ In the following example, debugging the program always **stops on entry**, excep
 
 ```json
 {
-    "version": "0.2.0",
+    "version": "latest",
     "configurations": [
         {
             "type": "node",
@@ -221,7 +221,7 @@ You can define launch configurations that are available across all your workspac
 
 ```json
 "launch": {
-    "version": "0.2.0",
+    "version": "latest",
     "configurations": [{
         "type": "node",
         "request": "launch",
@@ -269,7 +269,7 @@ Optionally, specify a `preLaunchTask` task that is run before the individual deb
 
 ```json
 {
-    "version": "0.2.0",
+    "version": "latest",
     "configurations": [
         {
             "type": "node",
@@ -316,7 +316,7 @@ app.listen(3000, function () {
 });
 ```
 
-This application first installs a "Hello World" handler for the "/" URL and then starts to listen for HTTP connections on port 3000. The port is announced in the Debug Console, and typically, the developer would now type `http://localhost:3000` into their browser application.
+This application first installs a "Hello World" handler for the "/" URL and then starts to listen for HTTP connections on port 8080. The port is announced in the Debug Console, and typically, the developer would now type `http://localhost:8080` into their browser application.
 
 The **serverReadyAction** feature makes it possible to add a structured property `serverReadyAction` to any launch config and select an "action" to be performed:
 
@@ -359,7 +359,7 @@ The named launch configuration must be in the same file or folder as the one wit
 
 Here the **serverReadyAction** feature in action:
 
-<video src="images/debugging/server-ready.mp4" title="Server ready feature in action" autoplay loop controls muted></video>
+<video src="images/debugging/server-ready.mp4" title="Server ready feature in action" autoplay loop controls muted></>
 
 ## Next steps
 
